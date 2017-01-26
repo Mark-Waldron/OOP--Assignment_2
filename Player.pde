@@ -2,8 +2,13 @@ class Player
 {
   PShape body;
   PShape chassie;
-  PShape wheels;
+  PShape wheels_1;
+  PShape wheels_2;
+  PShape wheels_3;
+  PShape wheels_4;
   PShape accessories;
+  PShape lines;
+  PShape lines_2;
   //PShape Axel_right;
   
   Player()
@@ -28,6 +33,8 @@ class Player
     
     Axel_right.endShape(CLOSE);
     */
+    
+    
     
     //Body kit  
     body = createShape();
@@ -60,10 +67,88 @@ class Player
     
     
    
+    
+    //wheels
+    wheels_1 = createShape();
+    wheels_1.beginShape();
+    wheels_1.fill(204, 51, 0);
+    
+    //back left
+    
+    wheels_1.vertex(120,110);
+    wheels_1.vertex(140,110);
+    wheels_1.vertex(140,160);
+    wheels_1.vertex(120,160);
+    wheels_1.endShape(CLOSE);
+   
+    //front left
+    wheels_2 = createShape();
+    wheels_2.beginShape();
+    wheels_2.fill(204, 51, 0);
+    
+    wheels_2.vertex(120,290);
+    wheels_2.vertex(140,290);
+    wheels_2.vertex(140,340);
+    wheels_2.vertex(120,340);
+    wheels_2.endShape(CLOSE);
+    
+    
+    //back right
+    wheels_3 = createShape();
+    wheels_3.beginShape();
+    wheels_3.fill(204, 51, 0);
+    
+    wheels_3.vertex(20,110);
+    wheels_3.vertex(0,110);
+    wheels_3.vertex(0,160);
+    wheels_3.vertex(20,160);
+    wheels_3.endShape(CLOSE);
+    
+    //front right
+    wheels_4 = createShape();
+    wheels_4.beginShape();
+    wheels_4.fill(204, 51, 0);
+    wheels_4.vertex(20,290);
+    wheels_4.vertex(0,290);
+    wheels_4.vertex(0,340);
+    wheels_4.vertex(20,345);
+    wheels_4.endShape(CLOSE);
+    
+    
+    
+    //accessories 
+    accessories = createShape();
+    accessories.beginShape();
+    accessories.fill(0);
+    
+    
+    accessories.vertex(95,300);
+    accessories.vertex(95,350);
+    accessories.vertex(70,300);
+    accessories.vertex(45,350);
+    accessories.vertex(45,300);
+    
+    accessories.endShape(CLOSE);
+    
+    
+    lines = createShape();
+    lines.beginShape(POINTS);
+    lines.vertex(95, 90);
+    lines.vertex(120, 30);
+    lines.endShape(CLOSE);
+    
+    lines_2 = createShape();
+    lines_2.beginShape(POINTS);
+    lines_2.vertex(45, 90);
+    lines_2.vertex(20, 30);
+    lines_2.endShape(CLOSE);
+    
+    
     //chassie kit
     chassie = createShape();
     chassie.beginShape();
-    chassie.fill(0);
+    chassie.fill(153, 153, 102);
+    
     
     //back left
     chassie.vertex(85,180);
@@ -92,62 +177,19 @@ class Player
     
     
     
-    //wheels
-    wheels = createShape();
-    wheels.beginShape();
-    wheels.fill(0);
-    
-    //back left
-    
-    wheels.vertex(120,110);
-    wheels.vertex(140,110);
-    wheels.vertex(140,160);
-    wheels.vertex(120,160);
-   
-    //front left
-    wheels.vertex(120,290);
-    wheels.vertex(140,290);
-    wheels.vertex(140,340);
-    wheels.vertex(120,340);
-    
-    //back right
-    wheels.vertex(20,110);
-    wheels.vertex(0,110);
-    wheels.vertex(0,160);
-    wheels.vertex(20,160);
-    
-    //front right
-    wheels.vertex(20,290);
-    wheels.vertex(0,290);
-    wheels.vertex(0,340);
-    wheels.vertex(20,345);
-    
-    
-    wheels.endShape(CLOSE);
-    
-    
-    
-    //accessories 
-    accessories = createShape();
-    accessories.beginShape();
-    accessories.fill(0);
-    
-    
-    accessories.vertex(95,300);
-    accessories.vertex(95,350);
-    accessories.vertex(70,300);
-    accessories.vertex(45,350);
-    accessories.vertex(45,300);
-    
-    accessories.endShape(CLOSE);
   }
   
   void render()
   {
     shape(body,400,40);
     shape(chassie,400,40);
-    shape(wheels,400,40);
+    shape(wheels_1,400,40);
+    shape(wheels_2,400,40);
+    shape(wheels_3,400,40);
+    shape(wheels_4,400,40);
     shape(accessories,400,40);
+    shape(lines,400,40);
+    shape(lines_2,400,40);
     //shape(Axel_right,400,40);
   }
 }

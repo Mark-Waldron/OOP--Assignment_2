@@ -1,7 +1,8 @@
 class Player
 {
   PShape body;
-  PShape chassie;  
+  PShape chassie;
+  PShape wheels;
   //PShape Axel_right;
   
   Player()
@@ -54,6 +55,9 @@ class Player
     //end point
     body.vertex(0,30); 
     body.endShape(CLOSE);
+    
+    
+    
    
     //chassie kit
     chassie = createShape();
@@ -83,18 +87,34 @@ class Player
     chassie.vertex(20,300);
     chassie.vertex(20,330);
     chassie.vertex(55,270);
-    
-    
-    
-    
     chassie.endShape(CLOSE);
+    
+    
+    
+    //wheels
+    wheels = createShape();
+    wheels.beginShape();
+    wheels.fill(0);
+    
+    //back left
+    
+    wheels.vertex(120,110);
+    wheels.vertex(140,110);
+    wheels.vertex(140,160);
+    wheels.vertex(120,160);
    
+   
+    
+    wheels.endShape(CLOSE);
+    
+    
   }
   
   void render()
   {
     shape(body,400,40);
     shape(chassie,400,40);
+    shape(wheels,400,40);
     //shape(Axel_right,400,40);
   }
 }

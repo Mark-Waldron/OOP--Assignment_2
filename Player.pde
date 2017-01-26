@@ -1,6 +1,8 @@
 class Player
 {
-  PShape car;
+  PShape body;
+  
+  //PShape Axel_right;
   
   Player()
   {
@@ -9,53 +11,76 @@ class Player
   
   void create()
   {
-    car = createShape();
-    car.beginShape();
-    car.fill(0);
+    /*
+    Axel_right = createShape();
+    Axel_right.beginShape();
+    Axel_right.fill(255);
+    
+    Axel_right.curveVertex(95, 150);
+    Axel_right.curveVertex(95, 150);
+    Axel_right.curveVertex(85, 210);
+    Axel_right.curveVertex(80, 225);
+    Axel_right.curveVertex(85, 240);
+    Axel_right.curveVertex(95, 300);
+    Axel_right.curveVertex(95, 300);
+    
+    Axel_right.endShape(CLOSE);
+    */
+    
+    
+    
+    
+    
+    
+    
+    
+    body = createShape();
+    body.beginShape();
+    body.fill(0);
     
     
     
     
     //spoiler
-    car.vertex(0,0);
-    car.vertex(140,0);
-    car.vertex(140,30);
+    body.vertex(0,0);
+    body.vertex(140,0);
+    body.vertex(140,30);
    
     
     //backend
-    car.vertex(85,30);
-    car.vertex(95,90);
-    car.vertex(95,150);
-    car.curveVertex(95,150);
-    car.curveVertex(95,150);
-    car.curveVertex(85,210);
-    car.curveVertex(80,225);
-    car.curveVertex(85,240);
-    car.curveVertex(95,300);
-    car.curveVertex(95,300);
+    body.vertex(85,30);
+    body.vertex(95,90);
+    body.vertex(95,150);
+    
+    
+    
     
     //bonnit
-    car.vertex(95,300);
-    car.vertex(70,360);
-    car.vertex(45,300);
+    body.vertex(95,300);
+    body.vertex(70,360);
+    body.vertex(45,300);
     
     //backend_2
-    car.vertex(45,90);
-    car.vertex(55,30);
+    body.vertex(45,90);
+    body.vertex(55,30);
     
     
     
     //end point
-    car.vertex(0,30); 
+    body.vertex(0,30); 
     
     
     
     
-    car.endShape(CLOSE);
+    body.endShape(CLOSE);
+    
+    
+    
   }
   
   void render()
   {
-    shape(car,400,40);
+    shape(body,400,40);
+    //shape(Axel_right,400,40);
   }
 }

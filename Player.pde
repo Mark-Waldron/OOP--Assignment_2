@@ -51,13 +51,13 @@ class Player
     Axel_right.endShape(CLOSE);
     */
     
-    
+
     
     //Body kit  
     body = createShape();
     body.beginShape();
     body.fill(0);
-       
+    
     //spoiler
     body.vertex(0,0);
     body.vertex(140,0);
@@ -204,16 +204,43 @@ class Player
     
     
     
-    shape(body,400,40);
-    shape(chassie,400,40);
-    shape(wheels_1,400,40);
-    shape(wheels_2,400,40);
-    shape(wheels_3,400,40);
-    shape(wheels_4,400,40);
-    shape(accessories,400,40);
-    shape(lines,400,40);
-    shape(lines_2,400,40);
+    shape(body,0,0);
+    shape(chassie,0,0);
+    shape(wheels_1,0,0);
+    shape(wheels_2,0,0);
+    shape(wheels_3,0,0);
+    shape(wheels_4,0,0);
+    shape(accessories,0,0);
+    shape(lines,0,0);
+    shape(lines_2,0,0);
     //shape(Axel_right,400,40);
+    
     popMatrix();
   }
+  
+  void update()
+  {
+    forward.x = sin(theta);
+    forward.y  = -cos(theta);
+    if (checkKey('w'))
+    {
+      pos.add(forward);
+    }
+    if (checkKey('s'))
+    {
+      pos.sub(forward);
+    }
+    if (checkKey('a'))
+    {
+      theta -= 0.1f;
+    }
+    if (checkKey('d'))
+    {
+      theta += 0.1f;
+    }
+    
+  }
+  
 }
+  
+  

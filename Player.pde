@@ -103,7 +103,11 @@ class Player
     wheels.vertex(140,160);
     wheels.vertex(120,160);
    
-   
+     //front left
+    wheels.vertex(120,290);
+    wheels.vertex(140,290);
+    wheels.vertex(140,340);
+    wheels.vertex(120,340);
     
     wheels.endShape(CLOSE);
     

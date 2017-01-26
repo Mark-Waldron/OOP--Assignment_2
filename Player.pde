@@ -198,6 +198,12 @@ class Player
   
   void render()
   {
+    pushMatrix(); 
+    translate(pos.x, pos.y);
+    rotate(theta); 
+    
+    
+    
     shape(body,400,40);
     shape(chassie,400,40);
     shape(wheels_1,400,40);
@@ -208,5 +214,6 @@ class Player
     shape(lines,400,40);
     shape(lines_2,400,40);
     //shape(Axel_right,400,40);
+    popMatrix();
   }
 }

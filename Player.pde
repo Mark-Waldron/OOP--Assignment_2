@@ -3,6 +3,7 @@ class Player
   PShape body;
   PShape chassie;
   PShape wheels;
+  PShape accessories;
   //PShape Axel_right;
   
   Player()
@@ -125,6 +126,20 @@ class Player
     wheels.endShape(CLOSE);
     
     
+    
+    //accessories 
+    accessories = createShape();
+    accessories.beginShape();
+    accessories.fill(0);
+    
+    
+    accessories.vertex(95,300);
+    accessories.vertex(95,350);
+    accessories.vertex(70,300);
+    accessories.vertex(45,350);
+    accessories.vertex(45,300);
+    
+    accessories.endShape(CLOSE);
   }
   
   void render()
@@ -132,6 +147,7 @@ class Player
     shape(body,400,40);
     shape(chassie,400,40);
     shape(wheels,400,40);
+    shape(accessories,400,40);
     //shape(Axel_right,400,40);
   }
 }

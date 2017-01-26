@@ -1,5 +1,13 @@
 class Player
 {
+  
+  
+  PVector pos;
+  PVector forward;
+  float theta;
+  float size;
+  float radius;
+  
   PShape body;
   PShape chassie;
   PShape wheels_1;
@@ -11,8 +19,17 @@ class Player
   PShape lines_2;
   //PShape Axel_right;
   
-  Player()
+  Player(float x, float y, float theta, float size)
   {
+    
+    pos = new PVector(x, y);
+    forward = new PVector(0, -1);
+    this.theta = theta;
+    this.size = size;
+    radius = size / 2;
+    
+
+    
     create();
   }
   

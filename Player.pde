@@ -203,9 +203,8 @@ class Player
     rotate(theta); 
     
     
-    
-    shape(body,0,0);
     shape(chassie,0,0);
+    shape(body,0,0);
     shape(wheels_1,0,0);
     shape(wheels_2,0,0);
     shape(wheels_3,0,0);
@@ -224,19 +223,19 @@ class Player
     forward.y  = -cos(theta);
     if (checkKey('w'))
     {
-      pos.add(forward);
+      pos.sub(forward);
     }
     if (checkKey('s'))
     {
-      pos.sub(forward);
+      pos.add(forward);
     }
     if (checkKey('a'))
     {
-      theta -= 0.1f;
+      theta -= 0.01f;
     }
     if (checkKey('d'))
     {
-      theta += 0.1f;
+      theta += 0.01f;
     }
     
   }

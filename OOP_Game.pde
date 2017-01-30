@@ -32,7 +32,7 @@ boolean checkKey(int k)
 void draw()
 {
   background(255);
-  player.update();
   player.render();
+  player.update();
  
 }

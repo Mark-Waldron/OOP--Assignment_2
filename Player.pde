@@ -219,23 +219,22 @@ class Player
   
   void update()
   {
-    forward.x = sin(theta);
-    forward.y  = -cos(theta);
-    if (checkKey('w'))
-    {
+    forward.x = 2 * sin(theta);
+    forward.y  = -2 * cos(theta);
+    
       pos.sub(forward);
-    }
+    
     if (checkKey('s'))
     {
       pos.add(forward);
     }
     if (checkKey('a'))
     {
-      theta -= 0.01f;
+      theta -= 0.05f;
     }
     if (checkKey('d'))
     {
-      theta += 0.01f;
+      theta += 0.05f;
     }
     
   }

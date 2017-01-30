@@ -6,7 +6,7 @@ class Player
   float fireRate = 2;
   float toPass = 1.0 / fireRate;
   float elapsed = toPass;
-  
+  float timeDelta = 1.0f / 60.0f;
   
   PVector pos;
   PVector forward;
@@ -41,11 +41,12 @@ class Player
     forward = new PVector(0, -1);
     accel = new PVector(0,0);
     velocity = new PVector(0,0);
+    force = new PVector(0, 0);
     this.theta = theta;
     this.size = size;
     radius = size / 2;
-  
-
+    
+ 
     
     create();
   }
@@ -245,12 +246,10 @@ class Player
     forward.x = 2 * sin(theta);
     forward.y  = -2 * cos(theta);
     
-      pos.sub(forward);
+   
+    force.add(PVector.mult(forward, power));      
     
-    if (checkKey('s'))
-    {
-      pos.add(forward);
-    }
+   
     if (checkKey('a'))
     {
       theta -= 0.05f;

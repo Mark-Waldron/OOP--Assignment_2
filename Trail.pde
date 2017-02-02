@@ -9,24 +9,48 @@ class Trail extends Physics
     accel = new PVector(0,0);
     velocity = new PVector(0,0);
     force = new PVector(0,0);
+    
+    create();
  }
    
-  void create()
-  {
-    ellipse(pos.x,pos.y,30,30);
-  }
+ void create()
+ {
+   trail = createShape();
+   trail.beginShape();
+   trail.vertex(70,30);
+   trail.endShape(CLOSE);
+ }
+ 
   
-  void render()
-  {
+ void render()
+ {
      pushMatrix();
      translate(pos.x, pos.y);
-     ellipse(pos.x,pos.y,30,30);
+     shape(trail,0,0);
      popMatrix();
      
   }
   
   void update()
   {
+    forward.x = 2 * sin(theta);
+    forward.y  = -2 * cos(theta);
+    
+   
+    force.add(PVector.mult(forward, -power));
+  
+     
+    
+   
+    if (checkKey('a'))
+    {
+      theta -= 0.05f;
+    }
+    if (checkKey('d'))
+    {
+      theta += 0.05f;
+    }
+    
     accel = PVector.div(force, mass);
     velocity.add(PVector.mult(accel, timeDelta));
     pos.add(PVector.mult(velocity, timeDelta));

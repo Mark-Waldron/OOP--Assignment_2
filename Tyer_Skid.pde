@@ -99,12 +99,8 @@ class Tyer_Skid extends Physics
     forward.x = 2 * sin(theta);
     forward.y  = -2 * cos(theta);
     
-   
     force.add(PVector.mult(forward, -power));
   
-     
-    
-   
     if (checkKey('a'))
     {
       theta -= 0.05f;

@@ -28,7 +28,7 @@ class Tyer_Skid extends Physics
     //wheels
     wheels_1 = createShape();
     wheels_1.beginShape();
-    wheels_1.fill(204, 51, 0,255);
+    wheels_1.fill(0);
     
     //back left
     
@@ -41,7 +41,7 @@ class Tyer_Skid extends Physics
     //front left
     wheels_2 = createShape();
     wheels_2.beginShape();
-    wheels_2.fill(204, 51, 0);
+    wheels_2.fill(0);
     
     wheels_2.vertex(120 + x_axis,290 + y_axis);
     wheels_2.vertex(140 + x_axis,290 + y_axis);
@@ -53,7 +53,7 @@ class Tyer_Skid extends Physics
     //back right
     wheels_3 = createShape();
     wheels_3.beginShape();
-    wheels_3.fill(204, 51, 0,255);
+    wheels_3.fill(0);
     
     wheels_3.vertex(20 + x_axis,110 + y_axis);
     wheels_3.vertex(0 + x_axis,110 + y_axis);
@@ -64,7 +64,7 @@ class Tyer_Skid extends Physics
     //front right
     wheels_4 = createShape();
     wheels_4.beginShape();
-    wheels_4.fill(204, 51, 0,255);
+    wheels_4.fill(0);
     wheels_4.vertex(20 + x_axis,290 + y_axis);
     wheels_4.vertex(0 + x_axis,290 + y_axis);
     wheels_4.vertex(0 + x_axis,340 + y_axis);

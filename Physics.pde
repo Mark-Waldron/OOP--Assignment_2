@@ -12,7 +12,6 @@ abstract class Physics
   PVector velocity;
   PVector accel;
   
-  
   float theta;
   float size;
   float radius;

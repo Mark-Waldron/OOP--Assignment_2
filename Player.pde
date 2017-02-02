@@ -49,7 +49,7 @@ class Player extends Physics
     //Body kit  
     body = createShape();
     body.beginShape();
-    body.fill(0,0,0,0);
+    body.fill(0,0,0);
     
     //spoiler
     body.vertex(0 + x_axis,0 + y_axis);
@@ -77,7 +77,7 @@ class Player extends Physics
     //accessories 
     accessories = createShape();
     accessories.beginShape();
-    accessories.fill(0,0,0,255);
+    accessories.fill(0,0,0);
     
     
     accessories.vertex(95 + x_axis,300 + y_axis);
@@ -105,7 +105,7 @@ class Player extends Physics
     //chassie kit
     chassie = createShape();
     chassie.beginShape();
-    chassie.fill(153, 153, 102,100);
+    chassie.fill(153, 153, 102);
     
     
     //back left

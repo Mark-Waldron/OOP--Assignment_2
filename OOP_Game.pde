@@ -4,7 +4,7 @@ void setup()
   background(255);
   
   player = new Player(width / 2, height / 2, 0, 50);
-  
+  tyres =  new Tyer_Skid(width/2,height/2,0,50);
 
   
 }
@@ -12,6 +12,7 @@ void setup()
 
 
 ArrayList<Tyer_Skid> Tyer_skid_array = new ArrayList<Tyer_Skid>();
+Tyer_Skid tyres; 
 
 
 Player player;
@@ -46,24 +47,25 @@ void draw()
   
   background(255);
   
-  
+  tyres.update();
+  tyres.render();
   for(Tyer_Skid t : Tyer_skid_array)
   {
     t.render();
-    t.update();
   }
   
   player.render();
   player.update();
   player.create();
-  
-for(int i = 0; i < 10; i++)
-{
-    if(Tyer_skid_array.size() == 10)
-    {
-      Tyer_skid_array.remove(0);
-    }
-    Tyer_skid_array.add(new Tyer_Skid(width / 2, height / 2, 0, 50));
+
+  Tyer_skid_array.add(new Tyer_Skid(tyres.pos.x, tyres.pos.y, tyres.theta, 50));
+  if(Tyer_skid_array.size() > 10)
+  {
+    Tyer_skid_array.remove(0);
+  }
+
+
+    
     
     
 }
@@ -74,4 +76,3 @@ for(int i = 0; i < 10; i++)
 
   
  
-}

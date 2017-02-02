@@ -4,17 +4,17 @@ void setup()
   background(255);
   
   player = new Player(width / 2, height / 2, 0, 50);
-  player_tyerskid = new Tyer_Skid(width / 2, height / 2, 0, 50);
+  
+
   
 }
 
 
 
-ArrayList<Tyer_Skid> particles = new ArrayList<Tyer_Skid>();
+ArrayList<Tyer_Skid> Tyer_skid_array = new ArrayList<Tyer_Skid>();
 
 
 Player player;
-Tyer_Skid player_tyerskid;
 boolean[] keys = new boolean[1000];
 
 void keyPressed()
@@ -34,25 +34,44 @@ boolean checkKey(int k)
     return keys[k] || keys[Character.toUpperCase(k)];  
   }
   return false;
+  
 }
 
 
+  
+
 void draw()
 {
+ 
+  
   background(255);
   
-  for (int i = particles.size() -1 ; i >= 0  ; i --)
-  {
-    Tyer_skid = particles.get(i); 
-    player_tyerskid.render();
-    player_tyerskid.update();
-    player_tyerskid.create(); 
-  }
   
+  for(Tyer_Skid t : Tyer_skid_array)
+  {
+    t.render();
+    t.update();
+  }
   
   player.render();
   player.update();
   player.create();
+  
+for(int i = 0; i < 10; i++)
+{
+    if(Tyer_skid_array.size() == 10)
+    {
+      Tyer_skid_array.remove(0);
+    }
+    Tyer_skid_array.add(new Tyer_Skid(width / 2, height / 2, 0, 50));
+    
+    
+}
+
+
+
+
+
   
  
 }

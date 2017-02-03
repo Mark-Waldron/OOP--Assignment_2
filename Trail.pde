@@ -2,13 +2,16 @@ class Trail extends Physics
 {
   PShape trail;
   
-  Trail(float x, float y)
+  Trail(float x, float y,float theta, float size)
   {
     pos = new PVector(x, y);
     forward = new PVector(0, -1);
     accel = new PVector(0,0);
     velocity = new PVector(0,0);
     force = new PVector(0,0);
+    this.theta = theta;
+    this.size = size;
+    radius = size / 2;
     
     create();
  }
@@ -17,7 +20,7 @@ class Trail extends Physics
  {
    trail = createShape();
    trail.beginShape();
-   trail.vertex(70,30);
+   trail.vertex(70 + x_axis, + y_axis);
    trail.endShape(CLOSE);
  }
  
@@ -26,6 +29,7 @@ class Trail extends Physics
  {
      pushMatrix();
      translate(pos.x, pos.y);
+     rotate(theta);
      shape(trail,0,0);
      popMatrix();
      

@@ -5,7 +5,7 @@ void setup()
   
   player = new Player(width / 2, height / 2, 0, 50);
   tyres = new Tyer_Skid(width/2,height/2,0,50);
-  trail = new Trail(width/2,height/2);
+  trail = new Trail(width/2,height/2,0,50);
 
   
 }
@@ -73,7 +73,7 @@ void draw()
     Tyer_skid_array.remove(0);
   }
   
-  trail_array.add(new Trail(trail.pos.x,trail.pos.y));
+  trail_array.add(new Trail(trail.pos.x,trail.pos.y,trail.theta,50));
 
     
     

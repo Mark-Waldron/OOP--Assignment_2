@@ -1,6 +1,6 @@
 void setup()
 {
-  fullScreen();
+  size(1200,700);
   background(255);
   
   player = new Player(width / 2, height / 2, 0, 50);
@@ -9,6 +9,7 @@ void setup()
 
   
 }
+int time = 0;
 
 ArrayList<Tyer_Skid> Tyer_skid_array = new ArrayList<Tyer_Skid>();
 ArrayList<Trail> trail_array = new ArrayList<Trail>();
@@ -44,37 +45,52 @@ boolean checkKey(int k)
 
 void draw()
 {
- 
+scale(0.5);
   
   background(255);
+  if(time % 15 == 0)
+  {
+    trail_array.add(new Trail(trail.pos.x,trail.pos.y,trail.theta,50));
+  }
+  Tyer_skid_array.add(new Tyer_Skid(tyres.pos.x, tyres.pos.y, tyres.theta, 50));
   
+  trail.update();
+  trail.render(); 
   tyres.update();
   tyres.render();
-  trail.update();
-  trail.render();
+ 
+ for(Trail r : trail_array)
+  {
+    r.render();
+  }
+  
   
   for(Tyer_Skid t : Tyer_skid_array)
   {
     t.render();
   }
   
-  for(Trail r : trail_array)
-  {
-    r.render();
-  }
   
   player.render();
   player.update();
   player.create();
-
-  Tyer_skid_array.add(new Tyer_Skid(tyres.pos.x, tyres.pos.y, tyres.theta, 50));
+  
+ 
+  
+  
   if(Tyer_skid_array.size() > 20)
   {
     Tyer_skid_array.remove(0);
   }
   
-  trail_array.add(new Trail(trail.pos.x,trail.pos.y,trail.theta,50));
-
+  
+  
+  if(trail_array.size() > 300)
+  {
+    trail_array.remove(0);
+  }
+  
+  time++;
     
     
     

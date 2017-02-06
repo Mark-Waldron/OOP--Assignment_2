@@ -1,6 +1,8 @@
 class Trail extends Physics
 {
-  PShape trail;
+  PShape trail_1;
+  PShape trail_2;
+  PShape trail_3;
   
   Trail(float x, float y,float theta, float size)
   {
@@ -18,10 +20,19 @@ class Trail extends Physics
    
  void create()
  {
-   trail = createShape();
-   trail.beginShape();
-   trail.vertex(70 + x_axis, + y_axis);
-   trail.endShape(CLOSE);
+    trail_1 = createShape(ELLIPSE,0,0-330,30,30);
+    trail_1.setFill(color(0));
+    
+    
+    
+    trail_2 = createShape(ELLIPSE,0,0-330,15,15);
+    trail_2.setFill(color(122, 122, 82));
+    
+    trail_3 = createShape(ELLIPSE,0,0-330,5,5);
+    trail_3.setFill(color(230, 0, 0));
+    
+    
+   
  }
  
   
@@ -30,7 +41,9 @@ class Trail extends Physics
      pushMatrix();
      translate(pos.x, pos.y);
      rotate(theta);
-     shape(trail,0,0);
+     shape(trail_1,0,0);
+     shape(trail_2,0,0);
+     shape(trail_3,0,0);
      popMatrix();
      
   }

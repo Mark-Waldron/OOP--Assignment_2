@@ -1,7 +1,7 @@
 class Collision extends Physics
 {
   PShape Hit_Box;
-  
+  int end = 400;
   Collision(float x, float y, float theta, float size)
   {
     pos = new PVector(x, y);
@@ -22,7 +22,7 @@ class Collision extends Physics
     Hit_Box = createShape();
     Hit_Box.beginShape();
     Hit_Box.noStroke();
-    Hit_Box.fill(255,255,255 );
+    Hit_Box.fill(255,255,255,0);
     Hit_Box.vertex(0 + x_axis ,0 + y_axis);
     Hit_Box.vertex(140 + x_axis,0 + y_axis);
     Hit_Box.vertex(140 + x_axis,360 + y_axis);
@@ -67,6 +67,20 @@ class Collision extends Physics
     force.x = force.y = 0;
     velocity.mult(0.99f);
     elapsed += timeDelta;
+    
+    for(int i = 0 ; i < physics.size() ; i ++)
+    {
+      Physics phy = physics.get(i);
+      if (phy instanceof Trail)
+      {
+        Trail b = (Trail) phy;
+        if (dist(phy.pos.x, phy.pos.y, this.pos.x, this.pos.y) < 0.4)
+        {
+          end--;
+          println(end);
+        }
+      }
+    }
     
   }
 }

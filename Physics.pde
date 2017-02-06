@@ -23,20 +23,4 @@ abstract class Physics
   abstract void update();  
   abstract void render();
     
-    
-  /*void trail()
-  {
-     // change color of circle paint depending on mouse button
-                if (mousePressed)  {
-                        
-                        fill(255,255,255,255);
-                }
-                else { 
-                        stroke( 0 );
-                        fill(255);
-                }
- 
-                // draw a circle where the mouse is located
-                ellipse(mouseX, mouseY, 30, 30);
-   }*/
 }

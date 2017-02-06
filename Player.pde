@@ -183,6 +183,8 @@ class Player extends Physics
     force.x = force.y = 0;
     velocity.mult(0.99f);
     elapsed += timeDelta;
+    
+    
   }
   
 }

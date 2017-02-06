@@ -11,6 +11,7 @@ void setup()
 }
 int time = 0;
 
+ArrayList<Physics> physics = new ArrayList<Physics>();
 ArrayList<Tyer_Skid> Tyer_skid_array = new ArrayList<Tyer_Skid>();
 ArrayList<Trail> trail_array = new ArrayList<Trail>();
 

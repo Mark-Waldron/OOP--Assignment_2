@@ -112,16 +112,12 @@ void draw()
     phy.render();    
   }
   
- 
-  
   }
   
-  if(stage == 3)
-  {
-    exit();
-    
-  }
+  
   time++;
+  
+  
 }
     
 

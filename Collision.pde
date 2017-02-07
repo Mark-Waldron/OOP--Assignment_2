@@ -81,7 +81,14 @@ class Collision extends Physics
           println(end);
           if(end <= 390)
           {
-            exit();          
+             if(end == 389)
+             {
+               
+             }
+             else if(end <= 388)
+             {
+              
+             }
           }
         }
       }

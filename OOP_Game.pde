@@ -74,9 +74,9 @@ void draw()
   {
     // Images must be in the "data" directory to load correctly
     
-    image(img, 0, 0);
-     PFont f = createFont("GoudyStout-48",25);
-     fill(0);
+   image(img, 0, 0);
+   PFont f = createFont("GoudyStout-48",25);
+   fill(0);
    textAlign(CENTER);
    textFont(f);
    textSize(25);

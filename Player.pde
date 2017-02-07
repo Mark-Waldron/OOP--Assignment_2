@@ -189,12 +189,12 @@ class Player extends Physics
     trail_array.add(new Trail(trail_1.pos.x,trail_1.pos.y,trail_1.theta,50));
     trail_array.add(new Trail(trail_2.pos.x,trail_2.pos.y,trail_2.theta,50));
   }
-  Tyer_skid_array.add(new Tyer_Skid(tyres_1.pos.x, tyres_1.pos.y, tyres_1.theta, 50));
-  Tyer_skid_array.add(new Tyer_Skid(tyres_2.pos.x, tyres_2.pos.y, tyres_2.theta, 50));
+  //Tyer_skid_array.add(new Tyer_Skid(tyres_1.pos.x, tyres_1.pos.y, tyres_1.theta, 50));
+  //Tyer_skid_array.add(new Tyer_Skid(tyres_2.pos.x, tyres_2.pos.y, tyres_2.theta, 50));
   
-  if(Tyer_skid_array.size() > 20)
+  //if(Tyer_skid_array.size() > 20)
   {
-    Tyer_skid_array.remove(0);
+    //Tyer_skid_array.remove(0);
   }
 
   if(trail_array.size() > 20)
@@ -208,11 +208,11 @@ class Player extends Physics
  }
   
   
-  for(Tyer_Skid t : Tyer_skid_array)
+ /* for(Tyer_Skid t : Tyer_skid_array)
   {
     t.render();
   }
-    
+ */ 
   }
   
 }

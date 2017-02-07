@@ -21,7 +21,7 @@ abstract class Physics
   int y_axis = -340;
   
   char left, right;
-  int end = 400;
+  
   
   abstract void update();  
   abstract void render();

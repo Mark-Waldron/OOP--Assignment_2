@@ -8,13 +8,13 @@ void setup()
   img = loadImage("background.jpg");
   
   player_1 = new Player(width / 2, height / 2, 0, 50, 'a', 'd');
-  player_2 = new Player(700,700, 0, 50, 'h','k');
+  player_2 = new Player(2000,height / 2, 0, 50, 'h','k');
   tyres_1 = new Tyer_Skid(width/2,height/2,0,50, 'a', 'd');
-  tyres_2 = new Tyer_Skid(700,700,0,50, 'h','k');
+  tyres_2 = new Tyer_Skid(2000,height / 2,0,50, 'h','k');
   trail_1 = new Trail(width/2,height/2,0,50, 'a', 'd');
-  trail_2 = new Trail(700,700,0,50, 'h','k');
+  trail_2 = new Trail(2000,height / 2,0,50, 'h','k');
   hitbox_1 = new Collision(width/2,height/2,0,50, 'a', 'd');
-  hitbox_2 = new Collision(width/2,height/2,0,50, 'h', 'k');
+  hitbox_2 = new Collision(2000,height/2,0,50, 'h', 'k');
   
   physics.add(player_1);
   physics.add(player_2);
@@ -111,6 +111,8 @@ void draw()
     phy.update();
     phy.render();    
   }
+  
+ 
   
   }
   

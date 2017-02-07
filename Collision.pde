@@ -1,6 +1,7 @@
 class Collision extends Physics
 {
   PShape Hit_Box;
+  int end = 400;
   
   Collision(float x, float y, float theta, float size, char left, char right)
   {
@@ -74,14 +75,20 @@ class Collision extends Physics
       Physics phy = physics.get(i);
       if (phy instanceof Trail)
       {
-        Trail b = (Trail) phy;
         if (dist(phy.pos.x, phy.pos.y, this.pos.x, this.pos.y) < 0.4)
         {
           end--;
           println(end);
+          if(end <= 390)
+          {
+            exit();          
+          }
         }
       }
     }
+    
+    
+    
     
   }
 }

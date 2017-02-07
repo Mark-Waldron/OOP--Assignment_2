@@ -22,15 +22,15 @@ class Trail extends Physics
    
  void create()
  {
-    trail_1 = createShape(ELLIPSE,0,0-400,30,30);
+    trail_1 = createShape(ELLIPSE,0,0-430,30,30);
     trail_1.setFill(color(0));
     
     
     
-    trail_2 = createShape(ELLIPSE,0,0-400,15,15);
+    trail_2 = createShape(ELLIPSE,0,0-430,15,15);
     trail_2.setFill(color(122, 122, 82));
     
-    trail_3 = createShape(ELLIPSE,0,0-400,5,5);
+    trail_3 = createShape(ELLIPSE,0,0-430,5,5);
     trail_3.setFill(color(230, 0, 0));
     
     

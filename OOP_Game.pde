@@ -1,7 +1,11 @@
+
+int stage = 1;
+
 void setup()
 {
-  size(1200,700);
+  fullScreen();
   background(255);
+  img = loadImage("background.jpg");
   
   player_1 = new Player(width / 2, height / 2, 0, 50);
   player_2 = new Player(700,700, 0, 50);
@@ -18,13 +22,16 @@ void setup()
   physics.add(trail_1);
   physics.add(trail_2);
   physics.add(hitbox_1);
+  
 }
 
 int time = 0;
+PImage img;
 
 ArrayList<Physics> physics = new ArrayList<Physics>();
 ArrayList<Tyer_Skid> Tyer_skid_array = new ArrayList<Tyer_Skid>();
 ArrayList<Trail> trail_array = new ArrayList<Trail>();
+
 
 Tyer_Skid tyres_1; 
 Tyer_Skid tyres_2; 
@@ -61,9 +68,18 @@ boolean checkKey(int k)
 
 void draw()
 {
+  if(stage == 1)
+  {
+    // Images must be in the "data" directory to load correctly
+    
+    image(img, 0, 0);
+  }
+  
+  
+  if(stage == 2)
+  {
   scale(0.5);
   background(255);
- 
  
   
   
@@ -78,6 +94,12 @@ void draw()
   
  
   time++;
+  }
+  
+  if(stage == 3)
+  {
+    
+  }
   }
     
 

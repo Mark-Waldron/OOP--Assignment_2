@@ -86,11 +86,14 @@ class Collision extends Physics
     }
     if(end <= 390)
     {
+      PFont t = createFont("GoudyStout-48",100);
+      fill(0);
+      textAlign(CENTER);
+      textFont(t);
+      textSize(100);
       background(255);
-      text("Player 1",660,450); 
+      text("Player 1 Wins",1300,300); 
     }
-    
-    
     
   }
 }

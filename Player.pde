@@ -199,7 +199,7 @@ class Player extends Physics
     //Tyer_skid_array.remove(0);
   }
 
-  if(trail_array.size() > 20)
+  if(trail_array.size() > 50)
   {
     trail_array.remove(0);
   }

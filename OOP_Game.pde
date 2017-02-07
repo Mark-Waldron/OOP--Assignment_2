@@ -14,7 +14,8 @@ void setup()
   trail_1 = new Trail(width/2,height/2,0,50, 'a', 'd');
   trail_2 = new Trail(700,700,0,50, 'h','k');
   hitbox_1 = new Collision(width/2,height/2,0,50, 'a', 'd');
- 
+  hitbox_2 = new Collision(width/2,height/2,0,50, 'h', 'k');
+  
   physics.add(player_1);
   physics.add(player_2);
   physics.add(tyres_1);
@@ -22,6 +23,7 @@ void setup()
   physics.add(trail_1);
   physics.add(trail_2);
   physics.add(hitbox_1);
+  physics.add(hitbox_2);
   
 }
 
@@ -39,8 +41,8 @@ Trail trail_1;
 Trail trail_2;
 Player player_1;
 Player player_2;
-
 Collision hitbox_1;
+Collision hitbox_2;
 boolean[] keys = new boolean[1000];
 
 void keyPressed()

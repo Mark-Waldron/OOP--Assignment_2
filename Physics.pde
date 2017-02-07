@@ -20,6 +20,8 @@ abstract class Physics
   int x_axis = -70;
   int y_axis = -340;
   
+  char left, right;
+  
   abstract void update();  
   abstract void render();
     

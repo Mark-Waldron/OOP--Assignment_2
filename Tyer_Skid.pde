@@ -8,7 +8,7 @@ class Tyer_Skid extends Physics
   
  
   
-  Tyer_Skid(float x, float y, float theta, float size)
+  Tyer_Skid(float x, float y, float theta, float size, char left, char right)
   {
     pos = new PVector(x, y);
     forward = new PVector(0, -1);

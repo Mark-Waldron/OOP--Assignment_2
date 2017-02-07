@@ -4,7 +4,7 @@ class Trail extends Physics
   PShape trail_2;
   PShape trail_3;
   
-  Trail(float x, float y,float theta, float size)
+  Trail(float x, float y,float theta, float size, char left, char right)
   {
     pos = new PVector(x, y);
     forward = new PVector(0, -1);

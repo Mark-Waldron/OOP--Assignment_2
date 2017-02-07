@@ -10,7 +10,7 @@ class Player extends Physics
   
   
   
-  Player(float x, float y, float theta, float size)
+  Player(float x, float y, float theta, float size, char left, char right)
   {
     
     pos = new PVector(x, y);

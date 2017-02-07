@@ -73,11 +73,29 @@ void draw()
     // Images must be in the "data" directory to load correctly
     
     image(img, 0, 0);
+     PFont f = createFont("GoudyStout-48",25);
+     fill(0);
+   textAlign(CENTER);
+   textFont(f);
+   textSize(25);
+   if(time % 5 == 0)
+   {
+   
+   }
+   else
+   {
+   text("Pressing any key to start the game",660,450);
+   }
+   if(keyPressed == true)
+   {
+     stage = 2;
+   }
   }
   
   
   if(stage == 2)
   {
+    
   scale(0.5);
   background(255);
  
@@ -93,14 +111,16 @@ void draw()
   }
   
  
-  time++;
+  
   }
   
   if(stage == 3)
   {
+    exit();
     
   }
-  }
+  time++;
+}
     
 
 

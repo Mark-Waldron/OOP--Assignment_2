@@ -2,7 +2,7 @@ class Collision extends Physics
 {
   PShape Hit_Box;
   int end = 400;
-  Collision(float x, float y, float theta, float size)
+  Collision(float x, float y, float theta, float size, char left, char right)
   {
     pos = new PVector(x, y);
     forward = new PVector(0, -1);

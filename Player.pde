@@ -170,11 +170,11 @@ class Player extends Physics
    
     force.add(PVector.mult(forward, -power));
  
-    if (checkKey('a'))
+     if (checkKey(left))
     {
       theta -= 0.05f;
     }
-    if (checkKey('d'))
+    if (checkKey(right))
     {
       theta += 0.05f;
     }

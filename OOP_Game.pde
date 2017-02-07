@@ -7,13 +7,13 @@ void setup()
   background(255);
   img = loadImage("background.jpg");
   
-  player_1 = new Player(width / 2, height / 2, 0, 50);
+  player_1 = new Player(width / 2, height / 2, 0, 50, 'a', 'd');
   player_2 = new Player(700,700, 0, 50);
-  tyres_1 = new Tyer_Skid(width/2,height/2,0,50);
+  tyres_1 = new Tyer_Skid(width/2,height/2,0,50, 'a', 'd');
   tyres_2 = new Tyer_Skid(700,700,0,50);
-  trail_1 = new Trail(width/2,height/2,0,50);
+  trail_1 = new Trail(width/2,height/2,0,50, 'a', 'd');
   trail_2 = new Trail(700,700,0,50);
-  hitbox_1 = new Collision(width/2,height/2,0,50);
+  hitbox_1 = new Collision(width/2,height/2,0,50, 'a', 'd');
  
   physics.add(player_1);
   physics.add(player_2);

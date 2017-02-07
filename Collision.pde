@@ -79,21 +79,16 @@ class Collision extends Physics
         {
           end--;
           println(end);
-          if(end <= 390)
-          {
-             if(end == 389)
-             {
-               
-             }
-             else if(end <= 388)
-             {
-              
-             }
-          }
+          
         }
+
       }
     }
-    
+    if(end <= 390)
+    {
+      background(255);
+      text("Player 1",660,450); 
+    }
     
     
     

@@ -11,6 +11,8 @@ class Collision extends Physics
     force = new PVector(0, 0);
     this.theta = theta;
     this.size = size;
+    this.left = left;
+    this.right = right;
     radius = size / 2;
     
     create();

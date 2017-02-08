@@ -12,8 +12,8 @@ void setup()
   
   //making a object for each class
   //making 2 for each of the car
-  player_1 = new Player(width / 2, height / 2, 0, 50, 'a', 'd');
-  player_2 = new Player(2000,height / 2, 0, 50, 'j','k');
+  player_1 = new Player(width / 2, height / 2, 0, 50, 'a', 'd',0, 0, 179);
+  player_2 = new Player(2000,height / 2, 0, 50, 'j','k', 204, 0, 0);
   tyres_1 = new Tyer_Skid(width/2,height/2,0,50, 'a', 'd');
   tyres_2 = new Tyer_Skid(2000,height / 2,0,50, 'j','k');
   trail_1 = new Trail(width/2,height/2,0,50, 'a', 'd');

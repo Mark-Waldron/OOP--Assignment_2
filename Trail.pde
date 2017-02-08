@@ -1,11 +1,17 @@
 class Trail extends Physics
 {
+  //making the trail
   PShape trail_1;
   PShape trail_2;
   PShape trail_3;
   
   Trail(float x, float y,float theta, float size, char left, char right)
   {
+    
+    /* recording each of these varaiables 
+       so that the opject can move with 
+       the other opjects from the other classes
+    */  
     pos = new PVector(x, y);
     forward = new PVector(0, -1);
     accel = new PVector(0,0);
@@ -17,6 +23,7 @@ class Trail extends Physics
     this.right = right;
     radius = size / 2;
     
+     //calling the create function
     create();
  }
    

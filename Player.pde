@@ -6,6 +6,7 @@ class Player extends Physics
   PShape accessories;
   PShape lines;
   PShape lines_2;
+  //colour for the objects
   float c1;
   float c2; 
   float c3;

@@ -1,10 +1,16 @@
 class Collision extends Physics
 {
+  //making a hitbox for the collision
   PShape Hit_Box;
+  // to determain a winner
   int end = 400;
   
   Collision(float x, float y, float theta, float size, char left, char right)
   {
+    /* recording each of these varaiables 
+       so that the opject can move with 
+       the other opjects from the other classes
+    */
     pos = new PVector(x, y);
     forward = new PVector(0, -1);
     accel = new PVector(0,0);
@@ -16,6 +22,7 @@ class Collision extends Physics
     this.right = right;
     radius = size / 2;
     
+    //calling the create function 
     create();
     
   } 

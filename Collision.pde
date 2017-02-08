@@ -82,20 +82,24 @@ class Collision extends Physics
     velocity.mult(0.99f);
     elapsed += timeDelta;
     
+    //collison detection
     for(int i = 0 ; i < physics.size() ; i ++)
     {
       Physics phy = physics.get(i);
       if (phy instanceof Trail)
       {
+        //if the trail is in the hitbox
         if (dist(phy.pos.x, phy.pos.y, this.pos.x, this.pos.y) < 0.4)
         {
+          //when it is it decrements
           end--;
           println(end);
-          
         }
 
       }
     }
+    
+    //declar the winner when the collision occurs 
     if(end <= 390)
     {
       PFont t = createFont("GoudyStout-48",100);

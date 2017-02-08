@@ -6,6 +6,9 @@ class Player extends Physics
   PShape accessories;
   PShape lines;
   PShape lines_2;
+  float c1;
+  float c2; 
+  float c3;
   
   
   Player(float x, float y, float theta, float size, char left, char right, float c1, float c2, float c3)
@@ -23,6 +26,10 @@ class Player extends Physics
     this.size = size;
     this.left = left;
     this.right = right;
+    this.c1 = c1;
+    this.c2 = c2;
+    this.c3 = c3;
+    
     radius = size / 2;
     
     //calling the create function
@@ -52,7 +59,7 @@ class Player extends Physics
     //Body kit  
     body = createShape();
     body.beginShape();
-    body.fill(0,0,0);
+    body.fill(c1,c2,c3);
     
     //spoiler
     body.vertex(0 + x_axis,0 + y_axis);
@@ -80,7 +87,7 @@ class Player extends Physics
     //accessories 
     accessories = createShape();
     accessories.beginShape();
-    accessories.fill(0,0,0);
+    accessories.fill(c1,c2,c3);
     
     
     accessories.vertex(95 + x_axis,300 + y_axis);

@@ -75,6 +75,9 @@ class Collision extends Physics
       theta += 0.05f;
     }
     
+    /* Physics which make the car move around
+       and drift
+    */
     accel = PVector.div(drift, mass);
     velocity.add(PVector.mult(accel, timeDelta));
     pos.add(PVector.mult(velocity, timeDelta));

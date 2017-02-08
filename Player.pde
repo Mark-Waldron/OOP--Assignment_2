@@ -172,7 +172,8 @@ class Player extends Physics
     //implementing drift machanic
     drift.add(PVector.mult(forward, -power));
    
- 
+       
+     //making the hitbox rotate with the car 
      if (checkKey(left))
     {
       theta -= 0.05f;
@@ -182,14 +183,18 @@ class Player extends Physics
       theta += 0.05f;
     }
     
+    /* Physics which make the car move around
+       and drift
+    */
     accel = PVector.div(drift, mass);
     velocity.add(PVector.mult(accel, timeDelta));
     pos.add(PVector.mult(velocity, timeDelta));
     drift.x = drift.y = 0;
     velocity.mult(0.99f);
     elapsed += timeDelta;
-    
-     if(time % 15 == 0)
+  
+  //makes a trail by making a new instance then adding it to array list
+  if(time % 15 == 0)
   {
     trail_array.add(new Trail(trail_1.pos.x,trail_1.pos.y,trail_1.theta,50, 'a','d'));
     trail_array.add(new Trail(trail_2.pos.x,trail_2.pos.y,trail_2.theta,50, 'h','k'));
@@ -202,11 +207,13 @@ class Player extends Physics
     //Tyer_skid_array.remove(0);
   }
 
+  //when the array gets to big removes the last element 
   if(trail_array.size() > 50)
   {
     trail_array.remove(0);
   }
  
+ //runs the array
  for(Trail r : trail_array)
  {
    r.render();

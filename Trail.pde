@@ -47,6 +47,7 @@ class Trail extends Physics
   
  void render()
  {
+     //tranlateing the point around the screen to simulate that the object 
      pushMatrix();
      translate(pos.x, pos.y);
      rotate(theta);
@@ -57,17 +58,19 @@ class Trail extends Physics
      
   }
   
+  
   void update()
   {
+    //direction is allways moving forward 
     forward.x = 2 * sin(theta);
     forward.y  = -2 * cos(theta);
     
-   
+     //implementing drift machanic
     drift.add(PVector.mult(forward, -power));
   
      
     
-   
+     //making the mines move position 
      if (checkKey(left))
     {
       theta -= 0.05f;
@@ -77,6 +80,9 @@ class Trail extends Physics
       theta += 0.05f;
     }
     
+    /* Physics that make the mines fallow 
+       the car as it gose around 
+    */
     accel = PVector.div(drift, mass);
     velocity.add(PVector.mult(accel, timeDelta));
     pos.add(PVector.mult(velocity, timeDelta));

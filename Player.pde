@@ -173,7 +173,7 @@ class Player extends Physics
     drift.add(PVector.mult(forward, -power));
    
        
-     //making the hitbox rotate with the car 
+     //making the car rotate 
      if (checkKey(left))
     {
       theta -= 0.05f;

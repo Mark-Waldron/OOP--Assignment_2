@@ -15,7 +15,7 @@ class Collision extends Physics
     forward = new PVector(0, -1);
     accel = new PVector(0,0);
     velocity = new PVector(0,0);
-    force = new PVector(0, 0);
+    drift = new PVector(0, 0);
     this.theta = theta;
     this.size = size;
     this.left = left;
@@ -29,6 +29,7 @@ class Collision extends Physics
   
   void create()
   {
+    //hitbox around the car
     Hit_Box = createShape();
     Hit_Box.beginShape();
     Hit_Box.noStroke();
@@ -45,6 +46,7 @@ class Collision extends Physics
   
   void render()
   {
+    //tranlateing the point around the screen to simulate that the object 
      pushMatrix();
     
     translate(pos.x, pos.y);
@@ -56,12 +58,14 @@ class Collision extends Physics
   
   void update()
   {
-  forward.x = 2 * sin(theta);
+    //direction is allways moving forward 
+    forward.x = 2 * sin(theta);
     forward.y  = -2 * cos(theta);
     
+    //implementing drift machanic
+    drift.add(PVector.mult(forward, -power));
    
-    force.add(PVector.mult(forward, -power));
- 
+     //making the hitbox rotate with the car 
      if (checkKey(left))
     {
       theta -= 0.05f;
@@ -70,10 +74,11 @@ class Collision extends Physics
     {
       theta += 0.05f;
     }
-    accel = PVector.div(force, mass);
+    
+    accel = PVector.div(drift, mass);
     velocity.add(PVector.mult(accel, timeDelta));
     pos.add(PVector.mult(velocity, timeDelta));
-    force.x = force.y = 0;
+    drift.x = drift.y = 0;
     velocity.mult(0.99f);
     elapsed += timeDelta;
     

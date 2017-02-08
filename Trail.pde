@@ -10,7 +10,7 @@ class Trail extends Physics
     forward = new PVector(0, -1);
     accel = new PVector(0,0);
     velocity = new PVector(0,0);
-    force = new PVector(0,0);
+    drift = new PVector(0,0);
     this.theta = theta;
     this.size = size;
     this.left = left;
@@ -56,7 +56,7 @@ class Trail extends Physics
     forward.y  = -2 * cos(theta);
     
    
-    force.add(PVector.mult(forward, -power));
+    drift.add(PVector.mult(forward, -power));
   
      
     
@@ -70,10 +70,10 @@ class Trail extends Physics
       theta += 0.05f;
     }
     
-    accel = PVector.div(force, mass);
+    accel = PVector.div(drift, mass);
     velocity.add(PVector.mult(accel, timeDelta));
     pos.add(PVector.mult(velocity, timeDelta));
-    force.x = force.y = 0;
+    drift.x = drift.y = 0;
     velocity.mult(0.99f);
     elapsed += timeDelta;
     

@@ -1,6 +1,6 @@
 abstract class Physics
 {
-  PVector force;
+  PVector drift;
   float power = 100;
   float fireRate = 2;
   float toPass = 1.0 / fireRate;

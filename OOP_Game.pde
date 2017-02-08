@@ -96,11 +96,15 @@ void draw()
        my tyer_skid array function working
     */
    image(img, 0, 0);
+   //setting the fount 
    PFont f = createFont("GoudyStout-48",25);
+   //sting the colour of the fount
    fill(0);
    textAlign(CENTER);
    textFont(f);
    textSize(25);
+   
+   //yousing this to make the text appear to be flashing 
    if(time % 5 == 0)
    {
    
@@ -109,6 +113,8 @@ void draw()
    {
      text("Pressing any key to start the game",660,450);
    }
+   
+   //pressing any key on the key board makes the game commence
    if(keyPressed == true)
    {
      stage = 2;
@@ -118,14 +124,14 @@ void draw()
   
   if(stage == 2)
   {
-    
+  //scaling the game down because I draw using pshpe vextors.
   scale(0.5);
   background(255);
  
   
   
  
-
+  //running through everything in the physics array list
   for (int i = physics.size() -1 ; i >= 0  ; i --)
   {
     Physics phy = physics.get(i); 
@@ -137,7 +143,7 @@ void draw()
   
   }
   
-  
+  //the timer thats keeps getting incremnted to keep cetain game functions running 
   time++;
   
   

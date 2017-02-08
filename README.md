@@ -25,3 +25,5 @@ Most prowed of:
 Saddly the thing I was most prowed of saddly when impplamented made the game run like a powerpoint presentation. It was a really neet skid affect.As the car would drift in a array list would be the wheels of the car stored for 20 and then the last one would be removed. The code is still there just commened out. If you would like to see it just uncoment or download a old version from git with the skid manics 
 
 Another thing I was prowed of the drift macanics and how it would glide around the screen.
+
+[![Video](http://img.youtube.com/vi/SasieHZFjiQ/0.jpg)](http://www.youtube.com/watch?v=SasieHZFjiQ)

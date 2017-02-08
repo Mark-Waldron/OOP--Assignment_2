@@ -144,7 +144,7 @@ class Player extends Physics
   void render()
   {
     
-   
+    //tranlateing the point around the screen to simulate that the object 
     pushMatrix();
     
     translate(pos.x, pos.y);
@@ -165,11 +165,13 @@ class Player extends Physics
   {
     
     
+     //direction is allways moving forward 
     forward.x = 2 * sin(theta);
     forward.y  = -2 * cos(theta);
     
-   
+    //implementing drift machanic
     drift.add(PVector.mult(forward, -power));
+   
  
      if (checkKey(left))
     {

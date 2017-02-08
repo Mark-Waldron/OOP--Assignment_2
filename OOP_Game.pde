@@ -8,17 +8,18 @@ void setup()
   
   //loading image form the data file 
   img = loadImage("background.jpg");
+  img_2 = loadImage("instructions.jpg");
   
   //making a object for each class
   //making 2 for each of the car
   player_1 = new Player(width / 2, height / 2, 0, 50, 'a', 'd');
-  player_2 = new Player(2000,height / 2, 0, 50, 'h','k');
+  player_2 = new Player(2000,height / 2, 0, 50, 'j','k');
   tyres_1 = new Tyer_Skid(width/2,height/2,0,50, 'a', 'd');
-  tyres_2 = new Tyer_Skid(2000,height / 2,0,50, 'h','k');
+  tyres_2 = new Tyer_Skid(2000,height / 2,0,50, 'j','k');
   trail_1 = new Trail(width/2,height/2,0,50, 'a', 'd');
-  trail_2 = new Trail(2000,height / 2,0,50, 'h','k');
+  trail_2 = new Trail(2000,height / 2,0,50, 'j','k');
   hitbox_1 = new Collision(width/2,height/2,0,50, 'a', 'd');
-  hitbox_2 = new Collision(2000,height/2,0,50, 'h', 'k');
+  hitbox_2 = new Collision(2000,height/2,0,50, 'j', 'k');
   
   //adding to a array list for physics 
   physics.add(player_1);
@@ -36,6 +37,7 @@ int time = 0;
 
 //calling the image from the file 
 PImage img;
+PImage img_2;
 
 //Array list for everything to be stored in 
 ArrayList<Physics> physics = new ArrayList<Physics>();
@@ -95,6 +97,8 @@ void draw()
     /* a image called that I made in paint by taking a screen grab of 
        my tyer_skid array function working
     */
+  
+   image(img_2,0,380);
    image(img, 0, 0);
    //setting the fount 
    PFont f = createFont("GoudyStout-48",25);
@@ -111,7 +115,7 @@ void draw()
    }
    else
    {
-     text("Pressing any key to start the game",660,450);
+     text("Pressing any key to start the game",670,350);
    }
    
    //pressing any key on the key board makes the game commence

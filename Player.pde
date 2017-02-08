@@ -8,7 +8,7 @@ class Player extends Physics
   PShape lines_2;
   
   
-  Player(float x, float y, float theta, float size, char left, char right)
+  Player(float x, float y, float theta, float size, char left, char right, float c1, float c2, float c3)
   {
     /* recording each of these varaiables 
        so that the opject can move with 
